@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{write}" th:object="${JpaDto}" method="POST">
+		<table border="1">
+			<tr>
+				<th>작성자</th>
+				<td><input th:field="*{myname}" type="text" name="myname"></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input th:field="*{mytitle}" type="text" name="mytitle"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea th:field="*{mycontent}" rows="20" cols="30" name="mycontent"></textarea></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="작성하기">
+	</form>
+
+</body>
+</html>
